@@ -1,64 +1,191 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的模板网页</title>
-  <!-- 引入外部CSS样式表 -->
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商丘CAN'SHE医疗美容展示</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box }
+        body { 
+            font-family: 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px 40px; /* 两侧增加宽度 */
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .slide-container {
+            max-width: 100%;
+            margin: 0 auto;
+            overflow-y: scroll; 
+            padding: 40px 60px; /* 两侧增加宽度 */
+            white-space: normal; 
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .slide {
+            display: block; 
+            width: 100%; 
+            aspect-ratio: 16/9;
+            margin-bottom: 30px; 
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .slide:hover {
+            transform: scale(1.05);
+            z-index: 1;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 28px; }
+            .slide { margin-bottom: 20px; }
+        }
+
+        /* 新增底部蓝框样式 */
+        .u-footer {
+            background-color: #007bff;
+            padding: 30px 40px;
+            color: white; /* 全部文字改为白色 */
+        }
+
+        /* 隐藏中间空白列 */
+        .u-layout-cell-2,
+        .u-layout-cell-3,
+        .u-layout-cell-4,
+        .u-layout-cell-6,
+        .u-layout-cell-7 {
+            display: none;
+        }
+
+        /* 左右分栏布局 */
+        .u-layout-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        /* 微信图片适配 */
+        .wechat-item img {
+            max-width: 100%;
+            max-height: 150px;
+            object-fit: contain;
+        }
+
+        /* 版权信息居中 */
+        .u-sheet {
+            text-align: center;
+        }
+        .u-sheet div {
+            display: none;
+        }
+        .u-sheet p {
+            margin: 20px 0;
+            line-height: 1.5;
+            color: white; /* 版权行文字颜色 */
+        }
+    </style>
 </head>
-
 <body>
-  <!-- 页头部分 -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#">首页</a></li>
-        <li><a href="#">关于我们</a></li>
-        <li><a href="#">服务</a></li>
-        <li><a href="#">联系我们</a></li>
-      </ul>
-    </nav>
-    <h1>欢迎来到我的网站</h1>
-  </header>
+    <div class="header">
+        <h1>商丘CAN'SHE恭喜医疗美容</h1>
+    </div>
 
-  <!-- 主体内容部分 -->
-  <main>
-    <section>
-      <h2>我们的使命</h2>
-      <p>这是一个示例段落，用于展示网页的主体内容。你可以在这里添加关于你的网站、产品或服务的详细描述。</p>
-    </section>
+    <div class="slide-container">
+        <div class="slide"><img src="品牌简介-canshe_页面_1.jpg" alt="首页"></div>
+        <div class="slide"><img src="品牌简介-canshe_页面_2.jpg" alt="品牌故事"></div>
+        <div class="slide"><img src="品牌简介-canshe_页面_3.jpg" alt="服务项目"></div>
+        <div class="slide"><img src="品牌简介-canshe_页面_4.jpg" alt="专家团队"></div>
+        <div class="slide"><img src="品牌简介-canshe_页面_5.jpg" alt="技术设备"></div>
+        <div class="slide"><img src="品牌简介-canshe_页面_6.jpg" alt="成功案例"></div>
+        <div class="slide"><img src="品牌简介-canshe_页面_7.jpg" alt="客户见证"></div>
+        <div class="slide"><img src="品牌简介-canshe_页面_8.jpg" alt="预约咨询"></div>
+    </div>
 
-    <section>
-      <h2>特色功能</h2>
-      <ul>
-        <li>功能一：描述功能一的详细信息。</li>
-        <li>功能二：描述功能二的详细信息。</li>
-        <li>功能三：描述功能三的详细信息。</li>
-      </ul>
-    </section>
-  </main>
 
-  <!-- 侧边栏部分（可选） -->
-  <aside>
-    <h3>最新资讯</h3>
-    <ul>
-      <li>资讯标题1：资讯内容的简要描述。</li>
-      <li>资讯标题2：资讯内容的简要描述。</li>
-      <li>资讯标题3：资讯内容的简要描述。</li>
-    </ul>
-  </aside>
 
-  <!-- 页脚部分 -->
-  <footer>
-    <p>&copy; 2024 我的公司名称。保留所有权利。</p>
-    <p>联系电话：123456789</p>
-    <p>电子邮件：<a href="mailto:example@example.com">example@example.com</a></p>
+  <footer class="u-align-center u-clearfix u-footer u-palette-2-base" id="sec-f99e">
+    <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
+      <div class="u-gutter-0 u-layout">
+        <div class="u-layout-row">
+          <div
+            class="u-container-style u-layout-cell u-size-13-sm u-size-13-xs u-size-17-lg u-size-17-xl u-size-20-md u-layout-cell-1 u-layout-cell-margin-bottom20">
+            <div class="u-container-layout u-container-layout-1">
+              <a href="./index.html"><img class="u-image u-image-contain u-image-default u-image-1"
+                  src="D:\Gongxijia/logo-white.png" alt="" data-image-width="1001" data-image-height="191"
+                  data-o-width="186"></a>
+              <p class="u-text u-text-default u-text-grey-10 u-text-1"> 地址：商丘市方域路与归德南路交叉口国安悦府一楼科美中心店</p> <!-- 修改为地址 -->
+              <p class="u-align-left u-text u-text-11"> 联系方式：15333709420（微信同号）
+              </p>
+            </div>
+          </div>
+          <div
+            class="u-container-style u-layout-cell u-size-11-sm u-size-11-xs u-size-20-md u-size-6-lg u-size-6-xl u-layout-cell-3 ">
+          </div>
+          <div
+            class="u-container-style u-layout-cell u-size-11-sm u-size-11-xs u-size-20-md u-size-6-lg u-size-6-xl u-layout-cell-3 ">
+          </div>
+          <div
+            class="u-container-style u-layout-cell u-size-13-sm u-size-13-xs u-size-17-lg u-size-17-xl u-size-30-md u-layout-cell-4">
+          </div>
+          <div
+            class="u-container-style u-layout-cell u-size-12 u-size-30-md u-layout-cell-5 u-layout-cell-margin-bottom20">
+            <div class="u-container-layout u-container-layout-5">
+              <div class="wechat-wrap">
+                <div class="wechat-item">
+                  <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-2"
+                    src="D:\Gongxijia\wechat-code.jpg" alt="" data-image-width="206" data-image-height="206">
+                  <h6 class="u-text u-text-default u-text-grey-25 u-text-12">美容微信</h6>
+                </div>
+                <div class="wechat-spacing"></div>
+                <div class="wechat-item">
+                  <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-2"
+                    src="D:\Gongxijia\wechat-account-code.png" alt="" data-image-width="206" data-image-height="206">
+                  <h6 class="u-text u-text-default u-text-grey-25 u-text-12">科美微信</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="u-border-1 u-border-custom-color-22 u-expanded-width u-line u-line-horizontal u-line-1"></div>
+    <div class="u-sheet u-sheet-1 u-flex-between u-flex-wrap">
+      <div style="margin-right: 40px;">
+        <p class="copyright-text">商丘CAN'SHE恭喜医疗美容</p>
+      </div>
+      <div>
+        <p class="copyright-text"> Copyright © 商丘恭喜. All Rights Reserved <a class="copyright-text"
+            href="https://beian.miit.gov.cn/" target="_blank">仅做品牌宣传使用</a></p>
+      </div>
+    </div>
   </footer>
 
-  <!-- 引入外部JavaScript文件 -->
-  <script src="scripts.js"></script>
-</body>
 
+
+
+    <script>
+        // 可选：添加滚动平滑效果（垂直方向）
+        document.querySelector('.slide-container').addEventListener('wheel', function(e) {
+            e.preventDefault();
+            let scrollAmount = e.deltaY > 0 ? -100 : 100;
+            this.scrollTop += scrollAmount;
+        });
+    </script>
+</body>
 </html>
